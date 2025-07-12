@@ -549,3 +549,10 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
     background: #d4a95f;
 }
+
+.cake-size-price {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    font-size: 1.2em;
+}
