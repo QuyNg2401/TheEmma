@@ -191,6 +191,32 @@
                 margin-left: 10px;
             }
         }
+
+        /* Đảm bảo CSS scroll, màu sắc, bo góc, padding giống contact.html và cake-fruit.html */
+        @media (max-width: 768px) {
+            .dropdown-menu {
+                max-height: 50vh;
+                overflow-y: auto;
+                position: fixed;
+                top: 120px;
+                left: 0;
+                right: 0;
+                width: 100vw;
+                z-index: 10001;
+                background: #000;
+                border-bottom-left-radius: 16px;
+                border-bottom-right-radius: 16px;
+            }
+        }
+        .dropdown-menu a {
+            color: #E5BC6F !important;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+            margin: 0;
+            padding-left: 28px !important;
+        }
     </style>
 </head>
 <body>
@@ -212,6 +238,8 @@
                         <a href="european-cake.html" class="dropdown-item">Bánh Âu</a>
                         <a href="salted-egg.html" class="dropdown-item">Bông lan trứng muối</a>
                         <a href="snack-cake.html" class="dropdown-item">Bánh ăn vặt</a>
+                        <a href="cake-fruit.html" class="dropdown-item">Bánh kem trái cây</a>
+                        <a href="flower.html" class="dropdown-item">Hoa</a>
                     </div>
                 </div>
                 <a href="bread.html" class="bread">Bánh mì</a>
@@ -332,6 +360,7 @@
             const europeanCakeLink = document.querySelector('.european-cake');
             const saltedEggLink = document.querySelector('.salted-egg');
             const snackCakeLink = document.querySelector('.snack-cake');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
 
             dropdownToggle.addEventListener('click', function(e) {
                 // Chỉ cho phép xổ dropdown khi màn hình nhỏ hơn hoặc bằng 768px
@@ -340,44 +369,10 @@
                 }
                 e.preventDefault();
                 this.classList.toggle('active');
-                if (breadLink.classList.contains('show')) {
-                    breadLink.classList.remove('show');
-                    drinksLink.classList.remove('show');
-                    comboLink.classList.remove('show');
-                    cakeAccessoriesLink.classList.remove('show');
-                    cakeThemeLink.classList.remove('show');
-                    europeanCakeLink.classList.remove('show');
-                    saltedEggLink.classList.remove('show');
-                    snackCakeLink.classList.remove('show');
-                    setTimeout(() => {
-                        breadLink.style.display = 'none';
-                        drinksLink.style.display = 'none';
-                        comboLink.style.display = 'none';
-                        cakeAccessoriesLink.style.display = 'none';
-                        cakeThemeLink.style.display = 'none';
-                        europeanCakeLink.style.display = 'none';
-                        saltedEggLink.style.display = 'none';
-                        snackCakeLink.style.display = 'none';
-                    }, 300);
+                if (this.classList.contains('active')) {
+                    dropdownMenu.style.display = 'block';
                 } else {
-                    breadLink.style.display = 'block';
-                    drinksLink.style.display = 'block';
-                    comboLink.style.display = 'block';
-                    cakeAccessoriesLink.style.display = 'block';
-                    cakeThemeLink.style.display = 'block';
-                    europeanCakeLink.style.display = 'block';
-                    saltedEggLink.style.display = 'block';
-                    snackCakeLink.style.display = 'block';
-                    setTimeout(() => {
-                        breadLink.classList.add('show');
-                        drinksLink.classList.add('show');
-                        comboLink.classList.add('show');
-                        cakeAccessoriesLink.classList.add('show');
-                        cakeThemeLink.classList.add('show');
-                        europeanCakeLink.classList.add('show');
-                        saltedEggLink.classList.add('show');
-                        snackCakeLink.classList.add('show');
-                    }, 10);
+                    dropdownMenu.style.display = 'none';
                 }
             });
             
@@ -407,6 +402,19 @@
                     }
                 });
             });
+
+            // Đóng menu con khi click ra ngoài
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth > 768) return;
+                if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
+                    dropdownMenu.style.display = 'none';
+                    dropdownToggle.classList.remove('active');
+                }
+            });
+            // Đảm bảo menu con ẩn mặc định trên mobile
+            if (window.innerWidth <= 768) {
+                dropdownMenu.style.display = 'none';
+            }
         });
         
         // Xử lý nút Back to Top mới

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bánh ăn vặt - The Emma</title>
+    <title>Bánh kem trái cây - The Emma</title>
     <link rel="stylesheet" href="Assets/css/style.css">
     <link rel="stylesheet" href="Assets/css/reponsive.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -17,31 +17,25 @@
             position: relative;
             display: inline-block;
         }
-        
         .dropdown-toggle {
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 5px;
         }
-        
         .dropdown-toggle .arrow {
             margin-left: auto;
             transition: transform 0.3s ease;
             display: none;
         }
-        
         .dropdown-toggle.active .arrow {
             transform: rotate(180deg);
         }
-        
-        /* Hiển thị mũi tên chỉ trên mobile */
         @media (max-width: 768px) {
             .dropdown-toggle .arrow {
                 display: block;
             }
         }
-        
         .dropdown-menu {
             display: none;
             position: absolute;
@@ -56,38 +50,51 @@
             margin: 0;
             list-style: none;
         }
-        
         .dropdown-menu a {
-            color: #333;
+            color: #E5BC6F !important;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
             transition: background-color 0.3s;
             margin: 0;
-            padding-left: 16px;
+            padding-left: 28px !important;
+            margin-left: 16px;
         }
-        
         .dropdown-menu a:hover {
             background-color: #000;
             color: var(--primary-color);
         }
-        
         .dropdown:hover .dropdown-menu {
             display: block;
         }
-        
         .dropdown-toggle.active {
             color: var(--primary-color);
         }
-        
-        /* Ẩn dropdown hover trên màn hình nhỏ */
         @media (max-width: 768px) {
             .dropdown:hover .dropdown-menu {
                 display: none;
             }
         }
-        
-        /* Animation cho danh mục con */
+        @media (max-width: 768px) {
+            .dropdown-menu {
+                max-height: 50vh;
+                overflow-y: auto;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                width: 100vw;
+                z-index: 10001;
+                background: #000;
+                border-bottom-left-radius: 16px;
+                border-bottom-right-radius: 16px;
+            }
+        }
+        @media (max-width: 768px) {
+            .dropdown-menu {
+                top: 120px;
+            }
+        }
         .nav-links .bread,
         .nav-links .drinks,
         .nav-links .combo,
@@ -100,8 +107,6 @@
             opacity: 0;
             transform: translateY(-10px);
         }
-        
-        /* Chỉ hiển thị khi có class show */
         .nav-links .bread.show,
         .nav-links .drinks.show,
         .nav-links .combo.show,
@@ -114,8 +119,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
-        /* Ẩn danh mục con trên desktop, chỉ hiển thị trên mobile */
         .nav-links .bread,
         .nav-links .drinks,
         .nav-links .combo,
@@ -128,8 +131,6 @@
             opacity: 0;
             transform: translateY(-10px);
         }
-        
-        /* Chỉ hiển thị khi có class show */
         .nav-links .bread.show,
         .nav-links .drinks.show,
         .nav-links .combo.show,
@@ -142,8 +143,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
-        /* Luôn ẩn trên desktop, kể cả khi có class show */
         @media (min-width: 769px) {
             .nav-links .bread,
             .nav-links .drinks,
@@ -156,29 +155,14 @@
                 display: none !important;
             }
         }
-        
         @media (max-width: 768px) {
-            .nav-links .bread,
-            .nav-links .drinks,
-            .nav-links .combo,
-            .nav-links .cake-accessories,
-            .nav-links .cake-theme,
-            .nav-links .european-cake,
-            .nav-links .salted-egg,
-            .nav-links .snack-cake {
-                display: block;
-            }
-            
-            /* Thêm padding cho mobile navigation */
             .nav-links {
                 padding: 20px;
             }
-            
             .nav-links a {
                 padding: 12px 0;
                 margin: 4px 0;
             }
-            
             .nav-links .bread,
             .nav-links .drinks,
             .nav-links .combo,
@@ -191,35 +175,7 @@
                 margin-left: 10px;
             }
         }
-
-        /* Đảm bảo CSS scroll, màu sắc, bo góc, padding giống contact.html và cake-fruit.html */
-        @media (max-width: 768px) {
-            .dropdown-menu {
-                max-height: 50vh;
-                overflow-y: auto;
-                position: fixed;
-                top: 120px;
-                left: 0;
-                right: 0;
-                width: 100vw;
-                z-index: 10001;
-                background: #000;
-                border-bottom-left-radius: 16px;
-                border-bottom-right-radius: 16px;
-            }
-        }
-        .dropdown-menu a {
-            color: #E5BC6F !important;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            transition: background-color 0.3s;
-            margin: 0;
-            padding-left: 28px !important;
-        }
     </style>
-</head>
-<body>
     <nav class="nav-container">
         <div class="nav-content">
             <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer;">
@@ -242,14 +198,6 @@
                         <a href="flower.html" class="dropdown-item">Hoa</a>
                     </div>
                 </div>
-                <a href="bread.html" class="bread">Bánh mì</a>
-                <a href="drinks.html" class="drinks">Nước</a>
-                <a href="combo.html" class="combo">Combo</a>
-                <a href="cake-accessories.html" class="cake-accessories">Bánh kem phụ kiện</a>
-                <a href="cake-theme.html" class="cake-theme">Bánh kem chủ đề</a>
-                <a href="european-cake.html" class="european-cake">Bánh Âu</a>
-                <a href="salted-egg.html" class="salted-egg">Bông lan trứng muối</a>
-                <a href="snack-cake.html" class="snack-cake">Bánh ăn vặt</a>
                 <a href="about.html">Giới thiệu</a>
                 <a href="contact.html">Liên hệ</a>
             </div>
@@ -257,61 +205,61 @@
         </div>
     </nav>
     <div class="container">
-        <h2 class="section-title" style="color:var(--primary-color);">Bánh ăn vặt</h2>
+        <h2 class="section-title" style="color:var(--primary-color);">Bánh kem trái cây</h2>
         <div class="menu-grid">
             <div class="cake-item">
                 <div class="cake-image">
-                    <img src="/api/placeholder/400/250" alt="Bánh bông lan cuộn">
+                    <img src="/api/placeholder/400/250" alt="Bánh kem trái cây tổng hợp">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">Bánh bông lan cuộn</h3>
-                    <p class="cake-description">Bánh bông lan cuộn mềm mịn với nhân kem tươi ngọt dịu.</p>
+                    <h3 class="cake-name">Bánh kem trái cây tổng hợp</h3>
+                    <p class="cake-description">Bánh kem với nhiều loại trái cây tươi, vị ngọt thanh mát, phù hợp cho mọi dịp.</p>
                     <ul class="cake-size-price">
-                        <li><strong>Size nhỏ:</strong> 25.000 VNĐ</li>
-                        <li><strong>Size vừa:</strong> 35.000 VNĐ</li>
-                        <li><strong>Size lớn:</strong> 45.000 VNĐ</li>
+                        <li><strong>Size nhỏ (6 inch):</strong> 200.000 VNĐ</li>
+                        <li><strong>Size vừa (8 inch):</strong> 270.000 VNĐ</li>
+                        <li><strong>Size lớn (10 inch):</strong> 370.000 VNĐ</li>
                     </ul>
                 </div>
             </div>
             <div class="cake-item">
                 <div class="cake-image">
-                    <img src="/api/placeholder/400/250" alt="Bánh cupcake">
+                    <img src="/api/placeholder/400/250" alt="Bánh kem dâu tây tươi">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">Bánh cupcake</h3>
-                    <p class="cake-description">Cupcake với nhiều hương vị khác nhau, trang trí đẹp mắt.</p>
+                    <h3 class="cake-name">Bánh kem dâu tây tươi</h3>
+                    <p class="cake-description">Bánh kem với lớp dâu tây tươi phủ trên mặt bánh, vị chua ngọt hài hòa.</p>
                     <ul class="cake-size-price">
-                        <li><strong>1 cái:</strong> 15.000 VNĐ</li>
-                        <li><strong>6 cái:</strong> 80.000 VNĐ</li>
-                        <li><strong>12 cái:</strong> 150.000 VNĐ</li>
+                        <li><strong>Size nhỏ (6 inch):</strong> 210.000 VNĐ</li>
+                        <li><strong>Size vừa (8 inch):</strong> 280.000 VNĐ</li>
+                        <li><strong>Size lớn (10 inch):</strong> 380.000 VNĐ</li>
                     </ul>
                 </div>
             </div>
             <div class="cake-item">
                 <div class="cake-image">
-                    <img src="/api/placeholder/400/250" alt="Bánh brownie">
+                    <img src="/api/placeholder/400/250" alt="Bánh kem kiwi">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">Bánh brownie</h3>
-                    <p class="cake-description">Brownie chocolate đậm đà, mềm ẩm với hạt óc chó.</p>
+                    <h3 class="cake-name">Bánh kem kiwi</h3>
+                    <p class="cake-description">Bánh kem với kiwi tươi, vị chua nhẹ và màu sắc bắt mắt.</p>
                     <ul class="cake-size-price">
-                        <li><strong>Size nhỏ:</strong> 20.000 VNĐ</li>
-                        <li><strong>Size vừa:</strong> 30.000 VNĐ</li>
-                        <li><strong>Size lớn:</strong> 40.000 VNĐ</li>
+                        <li><strong>Size nhỏ (6 inch):</strong> 220.000 VNĐ</li>
+                        <li><strong>Size vừa (8 inch):</strong> 290.000 VNĐ</li>
+                        <li><strong>Size lớn (10 inch):</strong> 390.000 VNĐ</li>
                     </ul>
                 </div>
             </div>
             <div class="cake-item">
                 <div class="cake-image">
-                    <img src="/api/placeholder/400/250" alt="Bánh macaron">
+                    <img src="/api/placeholder/400/250" alt="Bánh kem cam vàng">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">Bánh macaron</h3>
-                    <p class="cake-description">Macaron Pháp với nhiều hương vị, vỏ giòn nhân mềm.</p>
+                    <h3 class="cake-name">Bánh kem cam vàng</h3>
+                    <p class="cake-description">Bánh kem với cam vàng tươi, vị ngọt dịu và thơm mát.</p>
                     <ul class="cake-size-price">
-                        <li><strong>1 cái:</strong> 12.000 VNĐ</li>
-                        <li><strong>6 cái:</strong> 65.000 VNĐ</li>
-                        <li><strong>12 cái:</strong> 120.000 VNĐ</li>
+                        <li><strong>Size nhỏ (6 inch):</strong> 210.000 VNĐ</li>
+                        <li><strong>Size vừa (8 inch):</strong> 280.000 VNĐ</li>
+                        <li><strong>Size lớn (10 inch):</strong> 380.000 VNĐ</li>
                     </ul>
                 </div>
             </div>
@@ -322,7 +270,7 @@
             <div class="footer-info">
                 <p>Hộ kinh doanh tiệm bánh The Emma</p>
                 <p>105A/20 Đường Hồ Thị Kỷ, Phường 1, quận 10, Thành phố Hồ Chí Minh</p>
-                <p>Số điện thoại: 028.8888.3388</p>
+                <p>Số điện thoại: 09268.09269</p>
                 <p>Email: theemma1905@gmail.com</p>
             </div>
             <div class="footer-cert">
@@ -349,23 +297,10 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="Assets/js/main.js"></script>
     <script>
-        // Xử lý dropdown menu chỉ trên mobile
         document.addEventListener('DOMContentLoaded', function() {
             const dropdownToggle = document.querySelector('.dropdown-toggle');
             const dropdownMenu = document.querySelector('.dropdown-menu');
-            const breadLink = document.querySelector('.bread');
-            const drinksLink = document.querySelector('.drinks');
-            const comboLink = document.querySelector('.combo');
-            const cakeAccessoriesLink = document.querySelector('.cake-accessories');
-            const cakeThemeLink = document.querySelector('.cake-theme');
-            const europeanCakeLink = document.querySelector('.european-cake');
-            const saltedEggLink = document.querySelector('.salted-egg');
-            const snackCakeLink = document.querySelector('.snack-cake');
-            const cakeFruitLink = document.querySelector('.cake-fruit');
-            const flowerLink = document.querySelector('.flower');
-
             dropdownToggle.addEventListener('click', function(e) {
-                // Chỉ cho phép xổ dropdown khi màn hình nhỏ hơn hoặc bằng 768px
                 if (window.innerWidth > 768) {
                     return;
                 }
@@ -377,7 +312,6 @@
                     dropdownMenu.style.display = 'none';
                 }
             });
-            
             // Đóng menu con khi click ra ngoài
             document.addEventListener('click', function(e) {
                 if (window.innerWidth > 768) return;
@@ -390,25 +324,70 @@
             if (window.innerWidth <= 768) {
                 dropdownMenu.style.display = 'none';
             }
-            
+            const breadLink = document.querySelector('.bread');
+            const drinksLink = document.querySelector('.drinks');
+            const comboLink = document.querySelector('.combo');
+            const cakeAccessoriesLink = document.querySelector('.cake-accessories');
+            const cakeThemeLink = document.querySelector('.cake-theme');
+            const europeanCakeLink = document.querySelector('.european-cake');
+            const saltedEggLink = document.querySelector('.salted-egg');
+            const snackCakeLink = document.querySelector('.snack-cake');
+            dropdownToggle.addEventListener('click', function(e) {
+                if (window.innerWidth > 768) {
+                    return;
+                }
+                e.preventDefault();
+                this.classList.toggle('active');
+                if (breadLink.classList.contains('show')) {
+                    breadLink.classList.remove('show');
+                    drinksLink.classList.remove('show');
+                    comboLink.classList.remove('show');
+                    cakeAccessoriesLink.classList.remove('show');
+                    cakeThemeLink.classList.remove('show');
+                    europeanCakeLink.classList.remove('show');
+                    saltedEggLink.classList.remove('show');
+                    snackCakeLink.classList.remove('show');
+                    setTimeout(() => {
+                        breadLink.style.display = 'none';
+                        drinksLink.style.display = 'none';
+                        comboLink.style.display = 'none';
+                        cakeAccessoriesLink.style.display = 'none';
+                        cakeThemeLink.style.display = 'none';
+                        europeanCakeLink.style.display = 'none';
+                        saltedEggLink.style.display = 'none';
+                        snackCakeLink.style.display = 'none';
+                    }, 300);
+                } else {
+                    breadLink.style.display = 'block';
+                    drinksLink.style.display = 'block';
+                    comboLink.style.display = 'block';
+                    cakeAccessoriesLink.style.display = 'block';
+                    cakeThemeLink.style.display = 'block';
+                    europeanCakeLink.style.display = 'block';
+                    saltedEggLink.style.display = 'block';
+                    snackCakeLink.style.display = 'block';
+                    setTimeout(() => {
+                        breadLink.classList.add('show');
+                        drinksLink.classList.add('show');
+                        comboLink.classList.add('show');
+                        cakeAccessoriesLink.classList.add('show');
+                        cakeThemeLink.classList.add('show');
+                        europeanCakeLink.classList.add('show');
+                        saltedEggLink.classList.add('show');
+                        snackCakeLink.classList.add('show');
+                    }, 10);
+                }
+            });
             const dropdownItems = document.querySelectorAll('.dropdown-item');
-            
             dropdownItems.forEach(item => {
                 item.addEventListener('click', function(e) {
-                    // Không prevent default để cho phép chuyển trang
                     const href = this.getAttribute('href');
-                    
-                    // Nếu là link tới trang khác (không phải anchor), cho phép chuyển trang
                     if (href && !href.startsWith('#')) {
-                        // Cho phép chuyển trang bình thường
                         return;
                     }
-                    
-                    // Nếu là anchor link, xử lý scroll
                     e.preventDefault();
                     const targetId = href.substring(1);
                     const targetSection = document.getElementById(targetId);
-                    
                     if (targetSection) {
                         targetSection.scrollIntoView({
                             behavior: 'smooth',
@@ -418,8 +397,6 @@
                 });
             });
         });
-        
-        // Xử lý nút Back to Top mới
         const backToTopButton = document.getElementById('backToTopButton');
         if (backToTopButton) {
             window.addEventListener('scroll', () => {
@@ -437,7 +414,6 @@
                     behavior: 'smooth'
                 });
             });
-            // Ẩn mặc định
             backToTopButton.style.display = 'none';
         }
     </script>
