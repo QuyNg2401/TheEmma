@@ -58,7 +58,6 @@
             transition: background-color 0.3s;
             margin: 0;
             padding-left: 28px !important;
-            margin-left: 16px;
         }
         .dropdown-menu a:hover {
             background-color: #000;
@@ -180,6 +179,56 @@
                 margin-left: 10px;
             }
         }
+        @media (max-width: 600px) {
+  .cake-size-table {
+    font-size: 0.95em;
+  }
+  .cake-size-table th, .cake-size-table td {
+    padding: 7px 6px;
+    font-size: 1em;
+  }
+  .cake-size-table {
+    min-width: 0;
+    width: 100%;
+  }
+}
+.cake-size-table {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 1.1em;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.cake-size-table th, .cake-size-table td {
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  text-align: center;
+}
+.cake-size-table th {
+  background: #E5BC6F;
+  color: #000;
+}
+.cake-size-table th:first-child {
+  border-top-left-radius: 14px;
+}
+.cake-size-table th:last-child {
+  border-top-right-radius: 14px;
+}
+.cake-size-table tr:last-child td:first-child {
+  border-bottom-left-radius: 14px;
+}
+.cake-size-table tr:last-child td:last-child {
+  border-bottom-right-radius: 14px;
+}
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
     </style>
     <nav class="nav-container">
         <div class="nav-content">
@@ -211,6 +260,21 @@
     </nav>
     <div class="container">
         <h2 class="section-title" style="color:var(--primary-color);">Bánh kem trái cây</h2>
+        <div class="table-responsive">
+<table class="cake-size-table">
+  <thead>
+    <tr>
+      <th>Size</th>
+      <th>Giá</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Nhỏ (6 inch)</td><td>200.000 VNĐ</td></tr>
+    <tr><td>Vừa (8 inch)</td><td>270.000 VNĐ</td></tr>
+    <tr><td>Lớn (10 inch)</td><td>370.000 VNĐ</td></tr>
+  </tbody>
+</table>
+</div>
         <div class="menu-grid">
             <div class="cake-item">
                 <div class="cake-image">
@@ -219,11 +283,6 @@
                 <div class="cake-info">
                     <h3 class="cake-name">Bánh kem trái cây tổng hợp</h3>
                     <p class="cake-description">Bánh kem với nhiều loại trái cây tươi, vị ngọt thanh mát, phù hợp cho mọi dịp.</p>
-                    <ul class="cake-size-price">
-                        <li><strong>Size nhỏ (6 inch):</strong> 200.000 VNĐ</li>
-                        <li><strong>Size vừa (8 inch):</strong> 270.000 VNĐ</li>
-                        <li><strong>Size lớn (10 inch):</strong> 370.000 VNĐ</li>
-                    </ul>
                 </div>
             </div>
             <div class="cake-item">
@@ -233,11 +292,6 @@
                 <div class="cake-info">
                     <h3 class="cake-name">Bánh kem dâu tây tươi</h3>
                     <p class="cake-description">Bánh kem với lớp dâu tây tươi phủ trên mặt bánh, vị chua ngọt hài hòa.</p>
-                    <ul class="cake-size-price">
-                        <li><strong>Size nhỏ (6 inch):</strong> 210.000 VNĐ</li>
-                        <li><strong>Size vừa (8 inch):</strong> 280.000 VNĐ</li>
-                        <li><strong>Size lớn (10 inch):</strong> 380.000 VNĐ</li>
-                    </ul>
                 </div>
             </div>
             <div class="cake-item">
@@ -247,11 +301,6 @@
                 <div class="cake-info">
                     <h3 class="cake-name">Bánh kem kiwi</h3>
                     <p class="cake-description">Bánh kem với kiwi tươi, vị chua nhẹ và màu sắc bắt mắt.</p>
-                    <ul class="cake-size-price">
-                        <li><strong>Size nhỏ (6 inch):</strong> 220.000 VNĐ</li>
-                        <li><strong>Size vừa (8 inch):</strong> 290.000 VNĐ</li>
-                        <li><strong>Size lớn (10 inch):</strong> 390.000 VNĐ</li>
-                    </ul>
                 </div>
             </div>
             <div class="cake-item">
@@ -261,11 +310,6 @@
                 <div class="cake-info">
                     <h3 class="cake-name">Bánh kem cam vàng</h3>
                     <p class="cake-description">Bánh kem với cam vàng tươi, vị ngọt dịu và thơm mát.</p>
-                    <ul class="cake-size-price">
-                        <li><strong>Size nhỏ (6 inch):</strong> 210.000 VNĐ</li>
-                        <li><strong>Size vừa (8 inch):</strong> 280.000 VNĐ</li>
-                        <li><strong>Size lớn (10 inch):</strong> 380.000 VNĐ</li>
-                    </ul>
                 </div>
             </div>
         </div>

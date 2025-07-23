@@ -222,6 +222,57 @@
             background-color: #000;
             color: var(--primary-color) !important;
         }
+
+        @media (max-width: 600px) {
+  .cake-size-table {
+    font-size: 0.95em;
+  }
+  .cake-size-table th, .cake-size-table td {
+    padding: 7px 6px;
+    font-size: 1em;
+  }
+  .cake-size-table {
+    min-width: 0;
+    width: 100%;
+  }
+}
+.cake-size-table {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 1.1em;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.cake-size-table th, .cake-size-table td {
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  text-align: center;
+}
+.cake-size-table th {
+  background: #E5BC6F;
+  color: #000;
+}
+.cake-size-table th:first-child {
+  border-top-left-radius: 14px;
+}
+.cake-size-table th:last-child {
+  border-top-right-radius: 14px;
+}
+.cake-size-table tr:last-child td:first-child {
+  border-bottom-left-radius: 14px;
+}
+.cake-size-table tr:last-child td:last-child {
+  border-bottom-right-radius: 14px;
+}
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
     </style>
 </head>
 <body>
@@ -263,6 +314,21 @@
     </nav>
     <div class="container">
         <h2 class="section-title" style="color:var(--primary-color);">Bánh kem chủ đề</h2>
+        <div class="table-responsive">
+<table class="cake-size-table">
+  <thead>
+    <tr>
+      <th>Size</th>
+      <th>Giá</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Nhỏ (6 inch)</td><td>200.000 VNĐ</td></tr>
+    <tr><td>Vừa (8 inch)</td><td>280.000 VNĐ</td></tr>
+    <tr><td>Lớn (10 inch)</td><td>380.000 VNĐ</td></tr>
+  </tbody>
+</table>
+</div>
         <div class="menu-grid">
             <div class="cake-item">
                 <div class="cake-image">
@@ -271,11 +337,6 @@
                 <div class="cake-info">
                     <h3 class="cake-name">Bánh kem sinh nhật</h3>
                     <p class="cake-description">Bánh kem sinh nhật với chủ đề đa dạng, phù hợp mọi lứa tuổi.</p>
-                    <ul class="cake-size-price">
-                        <li><strong>Size nhỏ (6 inch):</strong> 200.000 VNĐ</li>
-                        <li><strong>Size vừa (8 inch):</strong> 280.000 VNĐ</li>
-                        <li><strong>Size lớn (10 inch):</strong> 380.000 VNĐ</li>
-                    </ul>
                 </div>
             </div>
             <div class="cake-item">
@@ -285,11 +346,6 @@
                 <div class="cake-info">
                     <h3 class="cake-name">Bánh kem cưới</h3>
                     <p class="cake-description">Bánh kem cưới sang trọng, trang trí hoa cưới tinh tế.</p>
-                    <ul class="cake-size-price">
-                        <li><strong>Size nhỏ (6 inch):</strong> 250.000 VNĐ</li>
-                        <li><strong>Size vừa (8 inch):</strong> 350.000 VNĐ</li>
-                        <li><strong>Size lớn (10 inch):</strong> 450.000 VNĐ</li>
-                    </ul>
                 </div>
             </div>
             <div class="cake-item">
@@ -299,11 +355,6 @@
                 <div class="cake-info">
                     <h3 class="cake-name">Bánh kem Halloween</h3>
                     <p class="cake-description">Bánh kem chủ đề Halloween với trang trí độc đáo, ma mị.</p>
-                    <ul class="cake-size-price">
-                        <li><strong>Size nhỏ (6 inch):</strong> 220.000 VNĐ</li>
-                        <li><strong>Size vừa (8 inch):</strong> 300.000 VNĐ</li>
-                        <li><strong>Size lớn (10 inch):</strong> 400.000 VNĐ</li>
-                    </ul>
                 </div>
             </div>
             <div class="cake-item">
@@ -313,11 +364,6 @@
                 <div class="cake-info">
                     <h3 class="cake-name">Bánh kem Giáng sinh</h3>
                     <p class="cake-description">Bánh kem chủ đề Giáng sinh với trang trí Noel ấm áp.</p>
-                    <ul class="cake-size-price">
-                        <li><strong>Size nhỏ (6 inch):</strong> 230.000 VNĐ</li>
-                        <li><strong>Size vừa (8 inch):</strong> 320.000 VNĐ</li>
-                        <li><strong>Size lớn (10 inch):</strong> 420.000 VNĐ</li>
-                    </ul>
                 </div>
             </div>
         </div>

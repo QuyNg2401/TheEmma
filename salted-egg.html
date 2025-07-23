@@ -222,6 +222,57 @@
             background-color: #000;
             color: var(--primary-color) !important;
         }
+
+        @media (max-width: 600px) {
+  .cake-size-table {
+    font-size: 0.95em;
+  }
+  .cake-size-table th, .cake-size-table td {
+    padding: 7px 6px;
+    font-size: 1em;
+  }
+  .cake-size-table {
+    min-width: 0;
+    width: 100%;
+  }
+}
+.cake-size-table {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 1.1em;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.cake-size-table th, .cake-size-table td {
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  text-align: center;
+}
+.cake-size-table th {
+  background: #E5BC6F;
+  color: #000;
+}
+.cake-size-table th:first-child {
+  border-top-left-radius: 14px;
+}
+.cake-size-table th:last-child {
+  border-top-right-radius: 14px;
+}
+.cake-size-table tr:last-child td:first-child {
+  border-bottom-left-radius: 14px;
+}
+.cake-size-table tr:last-child td:last-child {
+  border-bottom-right-radius: 14px;
+}
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
     </style>
 </head>
 <body>
@@ -263,6 +314,21 @@
     </nav>
     <div class="container">
         <h2 class="section-title" style="color:var(--primary-color);">Bông lan trứng muối</h2>
+        <div class="table-responsive">
+<table class="cake-size-table">
+  <thead>
+    <tr>
+      <th>Size</th>
+      <th>Giá</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Nhỏ</td><td>35.000 VNĐ</td></tr>
+    <tr><td>Vừa</td><td>55.000 VNĐ</td></tr>
+    <tr><td>Lớn</td><td>75.000 VNĐ</td></tr>
+  </tbody>
+</table>
+</div>
         <div class="menu-grid">
             <div class="cake-item">
                 <div class="cake-image">
@@ -271,11 +337,6 @@
                 <div class="cake-info">
                     <h3 class="cake-name">Bông lan trứng muối truyền thống</h3>
                     <p class="cake-description">Bông lan mềm mịn với trứng muối béo ngậy, vị mặn ngọt hài hòa.</p>
-                    <ul class="cake-size-price">
-                        <li><strong>Size nhỏ:</strong> 35.000 VNĐ</li>
-                        <li><strong>Size vừa:</strong> 55.000 VNĐ</li>
-                        <li><strong>Size lớn:</strong> 75.000 VNĐ</li>
-                    </ul>
                 </div>
             </div>
             <div class="cake-item">
@@ -285,11 +346,6 @@
                 <div class="cake-info">
                     <h3 class="cake-name">Bông lan trứng muối phô mai</h3>
                     <p class="cake-description">Bông lan trứng muối kết hợp phô mai béo ngậy, kéo sợi.</p>
-                    <ul class="cake-size-price">
-                        <li><strong>Size nhỏ:</strong> 40.000 VNĐ</li>
-                        <li><strong>Size vừa:</strong> 60.000 VNĐ</li>
-                        <li><strong>Size lớn:</strong> 80.000 VNĐ</li>
-                    </ul>
                 </div>
             </div>
             <div class="cake-item">
@@ -299,11 +355,6 @@
                 <div class="cake-info">
                     <h3 class="cake-name">Bông lan trứng muối matcha</h3>
                     <p class="cake-description">Bông lan matcha với trứng muối, vị thanh mát đặc biệt.</p>
-                    <ul class="cake-size-price">
-                        <li><strong>Size nhỏ:</strong> 38.000 VNĐ</li>
-                        <li><strong>Size vừa:</strong> 58.000 VNĐ</li>
-                        <li><strong>Size lớn:</strong> 78.000 VNĐ</li>
-                    </ul>
                 </div>
             </div>
             <div class="cake-item">
@@ -313,11 +364,6 @@
                 <div class="cake-info">
                     <h3 class="cake-name">Bông lan trứng muối chocolate</h3>
                     <p class="cake-description">Bông lan chocolate với trứng muối, vị đậm đà hấp dẫn.</p>
-                    <ul class="cake-size-price">
-                        <li><strong>Size nhỏ:</strong> 42.000 VNĐ</li>
-                        <li><strong>Size vừa:</strong> 62.000 VNĐ</li>
-                        <li><strong>Size lớn:</strong> 82.000 VNĐ</li>
-                    </ul>
                 </div>
             </div>
         </div>

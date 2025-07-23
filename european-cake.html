@@ -210,6 +210,57 @@
             background-color: #000;
             color: var(--primary-color) !important;
         }
+
+        @media (max-width: 600px) {
+  .cake-size-table {
+    font-size: 0.95em;
+  }
+  .cake-size-table th, .cake-size-table td {
+    padding: 7px 6px;
+    font-size: 1em;
+  }
+  .cake-size-table {
+    min-width: 0;
+    width: 100%;
+  }
+}
+.cake-size-table {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 1.1em;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.cake-size-table th, .cake-size-table td {
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  text-align: center;
+}
+.cake-size-table th {
+  background: #E5BC6F;
+  color: #000;
+}
+.cake-size-table th:first-child {
+  border-top-left-radius: 14px;
+}
+.cake-size-table th:last-child {
+  border-top-right-radius: 14px;
+}
+.cake-size-table tr:last-child td:first-child {
+  border-bottom-left-radius: 14px;
+}
+.cake-size-table tr:last-child td:last-child {
+  border-bottom-right-radius: 14px;
+}
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
     </style>
 </head>
 <body>
@@ -251,6 +302,21 @@
     </nav>
     <div class="container">
         <h2 class="section-title" style="color:var(--primary-color);">Bánh Âu</h2>
+        <div class="table-responsive">
+<table class="cake-size-table">
+  <thead>
+    <tr>
+      <th>Size</th>
+      <th>Giá</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Nhỏ</td><td>45.000 VNĐ</td></tr>
+    <tr><td>Vừa</td><td>65.000 VNĐ</td></tr>
+    <tr><td>Lớn</td><td>85.000 VNĐ</td></tr>
+  </tbody>
+</table>
+</div>
         <div class="menu-grid">
             <div class="cake-item">
                 <div class="cake-image">
@@ -259,11 +325,6 @@
                 <div class="cake-info">
                     <h3 class="cake-name">Tiramisu</h3>
                     <p class="cake-description">Bánh Tiramisu truyền thống Ý với cà phê đậm đà và kem mascarpone.</p>
-                    <ul class="cake-size-price">
-                        <li><strong>Size nhỏ:</strong> 45.000 VNĐ</li>
-                        <li><strong>Size vừa:</strong> 65.000 VNĐ</li>
-                        <li><strong>Size lớn:</strong> 85.000 VNĐ</li>
-                    </ul>
                 </div>
             </div>
             <div class="cake-item">
@@ -273,11 +334,6 @@
                 <div class="cake-info">
                     <h3 class="cake-name">Cheesecake</h3>
                     <p class="cake-description">Cheesecake New York với kem phô mai béo ngậy, đế bánh quy giòn.</p>
-                    <ul class="cake-size-price">
-                        <li><strong>Size nhỏ:</strong> 40.000 VNĐ</li>
-                        <li><strong>Size vừa:</strong> 60.000 VNĐ</li>
-                        <li><strong>Size lớn:</strong> 80.000 VNĐ</li>
-                    </ul>
                 </div>
             </div>
             <div class="cake-item">
@@ -287,11 +343,6 @@
                 <div class="cake-info">
                     <h3 class="cake-name">Chocolate mousse</h3>
                     <p class="cake-description">Chocolate mousse mềm mịn với chocolate đen cao cấp.</p>
-                    <ul class="cake-size-price">
-                        <li><strong>Size nhỏ:</strong> 35.000 VNĐ</li>
-                        <li><strong>Size vừa:</strong> 55.000 VNĐ</li>
-                        <li><strong>Size lớn:</strong> 75.000 VNĐ</li>
-                    </ul>
                 </div>
             </div>
             <div class="cake-item">
@@ -301,11 +352,6 @@
                 <div class="cake-info">
                     <h3 class="cake-name">Opera cake</h3>
                     <p class="cake-description">Opera cake Pháp với nhiều lớp bánh và chocolate đen.</p>
-                    <ul class="cake-size-price">
-                        <li><strong>Size nhỏ:</strong> 50.000 VNĐ</li>
-                        <li><strong>Size vừa:</strong> 70.000 VNĐ</li>
-                        <li><strong>Size lớn:</strong> 90.000 VNĐ</li>
-                    </ul>
                 </div>
             </div>
         </div>
