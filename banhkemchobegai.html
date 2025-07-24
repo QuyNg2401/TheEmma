@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - The Emma</title>
+    <title>Bánh Kem Fontdant nghệ thuật - The Emma</title>
     <link rel="stylesheet" href="Assets/css/style.css">
     <link rel="stylesheet" href="Assets/css/reponsive.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -11,38 +11,31 @@
     <link rel="icon" type="image/png" sizes="32x32" href="Assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="Assets/images/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="Assets/images/apple-touch-icon.png">
-    <link rel="manifest" href="Assets/site.webmanifest">
     <meta name="theme-color" content="#E5BC6F">
     <style>
         .dropdown {
             position: relative;
             display: inline-block;
         }
-        
         .dropdown-toggle {
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 5px;
         }
-        
         .dropdown-toggle .arrow {
             margin-left: auto;
             transition: transform 0.3s ease;
             display: none;
         }
-        
         .dropdown-toggle.active .arrow {
             transform: rotate(180deg);
         }
-        
-        /* Hiển thị mũi tên chỉ trên mobile */
         @media (max-width: 768px) {
             .dropdown-toggle .arrow {
                 display: block;
             }
         }
-        
         .dropdown-menu {
             display: none;
             position: absolute;
@@ -57,7 +50,6 @@
             margin: 0;
             list-style: none;
         }
-        
         .dropdown-menu a {
             color: #333;
             padding: 12px 16px;
@@ -67,28 +59,21 @@
             margin: 0;
             padding-left: 16px;
         }
-        
         .dropdown-menu a:hover {
             background-color: #000;
             color: var(--primary-color);
         }
-        
         .dropdown:hover .dropdown-menu {
             display: block;
         }
-        
         .dropdown-toggle.active {
             color: var(--primary-color);
         }
-        
-        /* Ẩn dropdown hover trên màn hình nhỏ */
         @media (max-width: 768px) {
             .dropdown:hover .dropdown-menu {
                 display: none;
             }
         }
-        
-        /* Animation cho danh mục con */
         .nav-links .bread,
         .nav-links .drinks,
         .nav-links .combo,
@@ -101,8 +86,6 @@
             opacity: 0;
             transform: translateY(-10px);
         }
-        
-        /* Chỉ hiển thị khi có class show */
         .nav-links .bread.show,
         .nav-links .drinks.show,
         .nav-links .combo.show,
@@ -115,8 +98,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
-        /* Ẩn danh mục con trên desktop, chỉ hiển thị trên mobile */
         .nav-links .bread,
         .nav-links .drinks,
         .nav-links .combo,
@@ -129,8 +110,6 @@
             opacity: 0;
             transform: translateY(-10px);
         }
-        
-        /* Chỉ hiển thị khi có class show */
         .nav-links .bread.show,
         .nav-links .drinks.show,
         .nav-links .combo.show,
@@ -143,8 +122,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
-        /* Luôn ẩn trên desktop, kể cả khi có class show */
         @media (min-width: 769px) {
             .nav-links .bread,
             .nav-links .drinks,
@@ -157,29 +134,14 @@
                 display: none !important;
             }
         }
-        
         @media (max-width: 768px) {
-            .nav-links .bread,
-            .nav-links .drinks,
-            .nav-links .combo,
-            .nav-links .cake-accessories,
-            .nav-links .cake-theme,
-            .nav-links .european-cake,
-            .nav-links .salted-egg,
-            .nav-links .snack-cake {
-                display: block;
-            }
-            
-            /* Thêm padding cho mobile navigation */
             .nav-links {
                 padding: 20px;
             }
-            
             .nav-links a {
                 padding: 12px 0;
                 margin: 4px 0;
             }
-            
             .nav-links .bread,
             .nav-links .drinks,
             .nav-links .combo,
@@ -192,7 +154,6 @@
                 margin-left: 10px;
             }
         }
-
         /* Đảm bảo CSS scroll, màu sắc, bo góc, padding giống contact.html và cake-fruit.html */
         @media (max-width: 768px) {
             .dropdown-menu {
@@ -218,37 +179,12 @@
             margin: 0;
             padding-left: 28px !important;
         }
-        /* Thêm CSS cho dropdown-menu-sub */
-        .dropdown-sub { position: relative; }
-        .dropdown-menu-sub {
-          display: none;
-          position: absolute;
-          left: 100%;
-          top: 0;
-          min-width: 220px;
-          background: #000;
-          border-radius: 16px !important;
-          border: 2px solid #E5BC6F;
-          box-shadow: 0 6px 24px rgba(0,0,0,0.18);
-          z-index: 10002;
-          overflow: hidden;
-        }
-        .dropdown-sub:hover .dropdown-menu-sub,
-        .dropdown-sub:focus-within .dropdown-menu-sub {
-          display: block;
-        }
-        .dropdown-menu-sub .dropdown-item {
-          color: #E5BC6F !important;
-          background: #000;
-          padding-left: 32px !important;
-        }
-        .dropdown-menu-sub .dropdown-item:hover {
-          background: #222;
-          color: #fff !important;
+        .dropdown-menu a.active,
+        .dropdown-menu a:hover {
+            background-color: #000;
+            color: var(--primary-color) !important;
         }
     </style>
-</head>
-<body>
     <nav class="nav-container">
         <div class="nav-content">
             <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer;">
@@ -262,18 +198,21 @@
                         <a href="bread.html" class="dropdown-item">Bánh mì</a>
                         <a href="drinks.html" class="dropdown-item">Nước</a>
                         <a href="combo.html" class="dropdown-item">Combo</a>
-                        <div class="dropdown-sub">
-                            <a href="#" class="dropdown-item dropdown-parent">Bánh kem</a>
-                            <div class="dropdown-menu-sub">
-                                <a href="cake-theme.html" class="dropdown-item">Bánh kem chủ đề - phụ kiện</a>
-                                <a href="cake-fruit.html" class="dropdown-item">Bánh kem trái cây</a>
-                            </div>
-                        </div>
+                        <a href="cake-theme.html" class="dropdown-item">Bánh kem chủ đề</a>
                         <a href="european-cake.html" class="dropdown-item">Bánh Ăn Vặt- Bánh Âu- Bánh Healthy</a>
                         <a href="salted-egg.html" class="dropdown-item">Bông lan trứng muối</a>
-                        <a href="flower.html" class="dropdown-item">Hoa kèm bánh và nước</a>
+                        <a href="snack-cake.html" class="dropdown-item">Bánh ăn vặt</a>
+                        <a href="cake-fruit.html" class="dropdown-item">Bánh kem trái cây</a>
+                        <a href="flower.html" class="dropdown-item active">Hoa kèm bánh và nước</a>
                     </div>
                 </div>
+                <a href="bread.html" class="bread">Bánh mì</a>
+                <a href="drinks.html" class="drinks">Nước</a>
+                <a href="combo.html" class="combo">Combo</a>
+                <a href="cake-theme.html" class="cake-theme">Bánh kem chủ đề</a>
+                <a href="european-cake.html" class="european-cake">Bánh Ăn Vặt- Bánh Âu- Bánh Healthy</a>
+                <a href="salted-egg.html" class="salted-egg">Bông lan trứng muối</a>
+                <a href="snack-cake.html" class="snack-cake">Bánh ăn vặt</a>
                 <a href="about.html">Giới thiệu</a>
                 <a href="contact.html">Liên hệ</a>
             </div>
@@ -281,91 +220,17 @@
         </div>
     </nav>
     <div class="container">
-        <h2 class="section-title" style="color:var(--primary-color);">Menu Bánh</h2>
-        <p style="text-align: center; font-size: 18px; margin-bottom: 40px; color: #666;">
-            Chọn danh mục bên dưới để xem chi tiết sản phẩm
-        </p>
+        <h2 class="section-title" style="color:var(--primary-color);">Bánh Kem Fontdant nghệ thuật</h2>
         <div class="menu-grid">
-            <div class="cake-item" onclick="window.location.href='bread.html'" style="cursor: pointer;">
-                <div class="cake-image">
-                    <img src="Assets/images/Anhnen2.jpg" alt="Bánh mì">
-                </div>
-                <div class="cake-info">
-                    <h3 class="cake-name">Bánh mì</h3>
-                    <p class="cake-description">Các loại bánh mì, croissant thơm ngon</p>
-                </div>
-            </div>
-            <div class="cake-item" onclick="window.location.href='drinks.html'" style="cursor: pointer;">
-                <div class="cake-image">
-                    <img src="Assets/images/Anhnen1.jpg" alt="Nước">
-                </div>
-                <div class="cake-info">
-                    <h3 class="cake-name">Nước</h3>
-                    <p class="cake-description">Cà phê, trà và các loại nước uống</p>
-                </div>
-            </div>
-            <div class="cake-item" onclick="window.location.href='combo.html'" style="cursor: pointer;">
-                <div class="cake-image">
-                    <img src="Assets/images/Anhnen.jpg" alt="Combo">
-                </div>
-                <div class="cake-info">
-                    <h3 class="cake-name">Combo</h3>
-                    <p class="cake-description">Các combo bánh và nước tiết kiệm</p>
-                </div>
-            </div>
-            <div class="cake-item" onclick="window.location.href='european-cake.html'" style="cursor: pointer;">
-                <div class="cake-image">
-                    <img src="Assets/images/Anhnen8.jpg" alt="Bánh Âu">
-                </div>
-                <div class="cake-info">
-                    <h3 class="cake-name">Bánh Âu</h3>
-                    <p class="cake-description">Các loại bánh Âu truyền thống</p>
-                </div>
-            </div>
-            <div class="cake-item" onclick="window.location.href='salted-egg.html'" style="cursor: pointer;">
-                <div class="cake-image">
-                    <img src="Assets/images/Anhnen9.jpg" alt="Bông lan trứng muối">
-                </div>
-                <div class="cake-info">
-                    <h3 class="cake-name">Bông lan trứng muối</h3>
-                    <p class="cake-description">Bông lan với trứng muối béo ngậy</p>
-                </div>
-            </div>
-            <div class="cake-item" onclick="window.location.href='flower.html'" style="cursor: pointer;">
-                <div class="cake-image">
-                    <img src="Assets/images/Anhnen11.jpg" alt="Hoa kèm bánh và nước">
-                </div>
-                <div class="cake-info">
-                    <h3 class="cake-name">Hoa kèm bánh và nước</h3>
-                    <p class="cake-description">Các loại hoa tươi</p>
-                </div>
-            </div>
-            <div class="cake-item" onclick="window.location.href='cake-theme.html'" style="cursor: pointer;">
-                <div class="cake-image">
-                    <img src="Assets/images/Anhnen5.jpg" alt="Bánh kem chủ đề">
-                </div>
-                <div class="cake-info">
-                    <h3 class="cake-name">Bánh kem chủ đề - phụ kiện</h3>
-                    <p class="cake-description">Bánh kem theo chủ đề đặc biệt</p>
-                </div>
-            </div>
-            <div class="cake-item" onclick="window.location.href='cake-fruit.html'" style="cursor: pointer;">
-                <div class="cake-image">
-                    <img src="Assets/images/Anhnen4.jpg" alt="Bánh kem trái cây">
-                </div>
-                <div class="cake-info">
-                    <h3 class="cake-name">Bánh kem trái cây</h3>
-                    <p class="cake-description">Bánh kem với trái cây tươi</p>
-                </div>
-            </div>
-        </div>
+            
+        </div> 
     </div>
     <footer>
         <div class="footer-content">
             <div class="footer-info">
                 <p>Hộ kinh doanh tiệm bánh The Emma</p>
                 <p>105A/20 Đường Hồ Thị Kỷ, Phường 1, quận 10, Thành phố Hồ Chí Minh</p>
-                <p>Số điện thoại: 028.8888.3388</p>
+                <p>Số điện thoại: 09268.09269</p>
                 <p>Email: theemma1905@gmail.com</p>
             </div>
             <div class="footer-cert">
@@ -385,7 +250,7 @@
         </a>
         <a href="tel:0926809269" class="phone-btn" aria-label="Gọi 0926809269">
             <span class="phone-icon">📞</span>
-            <span class="phone-text">09268.09269</span>
+            <span class="phone-text">0926.809.269</span>
         </a>
         <button id="backToTopButton" class="back-to-top-btn" aria-label="Lên đầu trang">↑</button>
     </div>
@@ -394,6 +259,14 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const dropdownToggle = document.querySelector('.dropdown-toggle');
+            const breadLink = document.querySelector('.bread');
+            const drinksLink = document.querySelector('.drinks');
+            const comboLink = document.querySelector('.combo');
+            const cakeAccessoriesLink = document.querySelector('.cake-accessories');
+            const cakeThemeLink = document.querySelector('.cake-theme');
+            const europeanCakeLink = document.querySelector('.european-cake'); // Đổi tên hiển thị thành Bánh Ăn Vặt- Bánh Âu- Bánh Healthy
+            const saltedEggLink = document.querySelector('.salted-egg');
+            // Đã xóa biến snackCakeLink vì không còn mục Bánh ăn vặt
             const dropdownMenu = document.querySelector('.dropdown-menu');
             dropdownToggle.addEventListener('click', function(e) {
                 if (window.innerWidth > 768) {
@@ -419,9 +292,25 @@
             if (window.innerWidth <= 768) {
                 dropdownMenu.style.display = 'none';
             }
+            const dropdownItems = document.querySelectorAll('.dropdown-item');
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && !href.startsWith('#')) {
+                        return;
+                    }
+                    e.preventDefault();
+                    const targetId = href.substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
         });
-        
-        // Xử lý nút Back to Top mới
         const backToTopButton = document.getElementById('backToTopButton');
         if (backToTopButton) {
             window.addEventListener('scroll', () => {
@@ -439,7 +328,6 @@
                     behavior: 'smooth'
                 });
             });
-            // Ẩn mặc định
             backToTopButton.style.display = 'none';
         }
     </script>
