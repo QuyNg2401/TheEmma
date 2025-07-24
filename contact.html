@@ -185,12 +185,11 @@
                         <a href="bread.html" class="dropdown-item">Bánh mì</a>
                         <a href="drinks.html" class="dropdown-item">Nước</a>
                         <a href="combo.html" class="dropdown-item">Combo</a>
-                        <a href="cake-theme.html" class="dropdown-item">Bánh kem chủ đề</a>
-                        <a href="european-cake.html" class="dropdown-item">Bánh Âu</a>
+                        <a href="cake-theme.html" class="dropdown-item">Bánh kem chủ đề - phụ kiện</a>
+                        <a href="european-cake.html" class="dropdown-item">Bánh Ăn Vặt- Bánh Âu- Bánh Healthy</a>
                         <a href="salted-egg.html" class="dropdown-item">Bông lan trứng muối</a>
-                        <a href="snack-cake.html" class="dropdown-item">Bánh ăn vặt</a>
                         <a href="cake-fruit.html" class="dropdown-item">Bánh kem trái cây</a>
-                        <a href="flower.html" class="dropdown-item">Hoa</a>
+                        <a href="flower.html" class="dropdown-item">Hoa kèm bánh và nước</a>
                     </div>
                 </div>
                 <a href="about.html">Giới thiệu</a>
@@ -291,11 +290,11 @@
             const drinksLink = document.querySelector('.drinks');
             const comboLink = document.querySelector('.combo');
             const cakeThemeLink = document.querySelector('.cake-theme');
-            const europeanCakeLink = document.querySelector('.european-cake');
+            const europeanCakeLink = document.querySelector('.european-cake'); // Đổi tên hiển thị thành Bánh Ăn Vặt- Bánh Âu- Bánh Healthy
             const saltedEggLink = document.querySelector('.salted-egg');
-            const snackCakeLink = document.querySelector('.snack-cake');
+            // Đã xóa biến snackCakeLink vì không còn mục Bánh ăn vặt
             const cakeFruitLink = document.querySelector('.cake-fruit');
-            const cakeFlowerLink = document.querySelector('.flower');
+            const cakeFlowerLink = document.querySelector('.flower'); // Đổi tên hiển thị thành Hoa kèm bánh và nước
 
             dropdownToggle.addEventListener('click', function(e) {
                 // Chỉ cho phép xổ dropdown khi màn hình nhỏ hơn hoặc bằng 768px
@@ -311,7 +310,6 @@
                     cakeThemeLink.classList.remove('show');
                     europeanCakeLink.classList.remove('show');
                     saltedEggLink.classList.remove('show');
-                    snackCakeLink.classList.remove('show');
                     cakeFruitLink.classList.remove('show');
                     cakeFlowerLink.classList.remove('show');
                     setTimeout(() => {
@@ -321,7 +319,6 @@
                         cakeThemeLink.style.display = 'none';
                         europeanCakeLink.style.display = 'none';
                         saltedEggLink.style.display = 'none';
-                        snackCakeLink.style.display = 'none';
                         cakeFruitLink.style.display = 'none';
                         cakeFlowerLink.style.display = 'none';
                     }, 300);
@@ -332,7 +329,6 @@
                     cakeThemeLink.style.display = 'block';
                     europeanCakeLink.style.display = 'block';
                     saltedEggLink.style.display = 'block';
-                    snackCakeLink.style.display = 'block';
                     cakeFruitLink.style.display = 'block';
                     cakeFlowerLink.style.display = 'block';
                     setTimeout(() => {
@@ -342,7 +338,6 @@
                         cakeThemeLink.classList.add('show');
                         europeanCakeLink.classList.add('show');
                         saltedEggLink.classList.add('show');
-                        snackCakeLink.classList.add('show');
                         cakeFruitLink.classList.add('show');
                         cakeFlowerLink.classList.add('show');
                     }, 10);

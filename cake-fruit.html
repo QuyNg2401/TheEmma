@@ -243,12 +243,12 @@
                         <a href="bread.html" class="dropdown-item">Bánh mì</a>
                         <a href="drinks.html" class="dropdown-item">Nước</a>
                         <a href="combo.html" class="dropdown-item">Combo</a>
-                        <a href="cake-theme.html" class="dropdown-item">Bánh kem chủ đề</a>
-                        <a href="european-cake.html" class="dropdown-item">Bánh Âu</a>
+                        <a href="cake-theme.html" class="dropdown-item">Bánh kem chủ đề - phụ kiện</a>
+                        <a href="european-cake.html" class="dropdown-item">Bánh Ăn Vặt- Bánh Âu- Bánh Healthy</a>
                         <a href="salted-egg.html" class="dropdown-item">Bông lan trứng muối</a>
                         <a href="snack-cake.html" class="dropdown-item">Bánh ăn vặt</a>
                         <a href="cake-fruit.html" class="dropdown-item active">Bánh kem trái cây</a>
-                        <a href="flower.html" class="dropdown-item">Hoa</a>
+                        <a href="flower.html" class="dropdown-item">Hoa kèm bánh và nước</a>
                     </div>
                 </div>
                 <a href="about.html">Giới thiệu</a>
@@ -277,38 +277,38 @@
         <div class="menu-grid">
             <div class="cake-item">
                 <div class="cake-image">
-                    <img src="/api/placeholder/400/250" alt="Bánh kem trái cây tổng hợp">
+                    <img src="Assets/images/BCTC.jpg" alt="">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">Bánh kem trái cây tổng hợp</h3>
-                    <p class="cake-description">Bánh kem với nhiều loại trái cây tươi, vị ngọt thanh mát, phù hợp cho mọi dịp.</p>
+                    <h3 class="cake-name"></h3>
+                    <p class="cake-description"></p>
                 </div>
             </div>
             <div class="cake-item">
                 <div class="cake-image">
-                    <img src="/api/placeholder/400/250" alt="Bánh kem dâu tây tươi">
+                    <img src="Assets/images/BCTC1.jpg" alt="">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">Bánh kem dâu tây tươi</h3>
-                    <p class="cake-description">Bánh kem với lớp dâu tây tươi phủ trên mặt bánh, vị chua ngọt hài hòa.</p>
+                    <h3 class="cake-name"></h3>
+                    <p class="cake-description"></p>
                 </div>
             </div>
             <div class="cake-item">
                 <div class="cake-image">
-                    <img src="/api/placeholder/400/250" alt="Bánh kem kiwi">
+                    <img src="Assets/images/BCTC2.jpg" alt="">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">Bánh kem kiwi</h3>
-                    <p class="cake-description">Bánh kem với kiwi tươi, vị chua nhẹ và màu sắc bắt mắt.</p>
+                    <h3 class="cake-name"></h3>
+                    <p class="cake-description"></p>
                 </div>
             </div>
             <div class="cake-item">
                 <div class="cake-image">
-                    <img src="/api/placeholder/400/250" alt="Bánh kem cam vàng">
+                    <img src="Assets/images/BCTC3.jpg" alt="Bánh kem cam vàng">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">Bánh kem cam vàng</h3>
-                    <p class="cake-description">Bánh kem với cam vàng tươi, vị ngọt dịu và thơm mát.</p>
+                    <h3 class="cake-name"></h3>
+                    <p class="cake-description"></p>
                 </div>
             </div>
         </div>
@@ -377,9 +377,9 @@
             const comboLink = document.querySelector('.combo');
             const cakeAccessoriesLink = document.querySelector('.cake-accessories');
             const cakeThemeLink = document.querySelector('.cake-theme');
-            const europeanCakeLink = document.querySelector('.european-cake');
+            const europeanCakeLink = document.querySelector('.european-cake'); // Đổi tên hiển thị thành Bánh Ăn Vặt- Bánh Âu- Bánh Healthy
             const saltedEggLink = document.querySelector('.salted-egg');
-            const snackCakeLink = document.querySelector('.snack-cake');
+            // Đã xóa biến snackCakeLink vì không còn mục Bánh ăn vặt
             dropdownToggle.addEventListener('click', function(e) {
                 if (window.innerWidth > 768) {
                     return;
@@ -394,7 +394,7 @@
                     cakeThemeLink.classList.remove('show');
                     europeanCakeLink.classList.remove('show');
                     saltedEggLink.classList.remove('show');
-                    snackCakeLink.classList.remove('show');
+                    // snackCakeLink.classList.remove('show'); // Đã xóa biến snackCakeLink
                     setTimeout(() => {
                         breadLink.style.display = 'none';
                         drinksLink.style.display = 'none';
@@ -403,7 +403,7 @@
                         cakeThemeLink.style.display = 'none';
                         europeanCakeLink.style.display = 'none';
                         saltedEggLink.style.display = 'none';
-                        snackCakeLink.style.display = 'none';
+                        // snackCakeLink.style.display = 'none'; // Đã xóa biến snackCakeLink
                     }, 300);
                 } else {
                     breadLink.style.display = 'block';
@@ -413,7 +413,7 @@
                     cakeThemeLink.style.display = 'block';
                     europeanCakeLink.style.display = 'block';
                     saltedEggLink.style.display = 'block';
-                    snackCakeLink.style.display = 'block';
+                    // snackCakeLink.style.display = 'block'; // Đã xóa biến snackCakeLink
                     setTimeout(() => {
                         breadLink.classList.add('show');
                         drinksLink.classList.add('show');
@@ -422,7 +422,7 @@
                         cakeThemeLink.classList.add('show');
                         europeanCakeLink.classList.add('show');
                         saltedEggLink.classList.add('show');
-                        snackCakeLink.classList.add('show');
+                        // snackCakeLink.classList.add('show'); // Đã xóa biến snackCakeLink
                     }, 10);
                 }
             });

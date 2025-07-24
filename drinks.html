@@ -238,21 +238,19 @@
                         <a href="bread.html" class="dropdown-item">Bánh mì</a>
                         <a href="drinks.html" class="dropdown-item active">Nước</a>
                         <a href="combo.html" class="dropdown-item">Combo</a>
-                        <a href="cake-theme.html" class="dropdown-item">Bánh kem chủ đề</a>
-                        <a href="european-cake.html" class="dropdown-item">Bánh Âu</a>
+                        <a href="cake-theme.html" class="dropdown-item">Bánh kem chủ đề - phụ kiện</a>
+                        <a href="european-cake.html" class="dropdown-item">Bánh Ăn Vặt- Bánh Âu- Bánh Healthy</a>
                         <a href="salted-egg.html" class="dropdown-item">Bông lan trứng muối</a>
-                        <a href="snack-cake.html" class="dropdown-item">Bánh ăn vặt</a>
                         <a href="cake-fruit.html" class="dropdown-item">Bánh kem trái cây</a>
-                        <a href="flower.html" class="dropdown-item">Hoa</a>
+                        <a href="flower.html" class="dropdown-item">Hoa kèm bánh và nước</a>
                     </div>
                 </div>
                 <a href="bread.html" class="bread">Bánh mì</a>
                 <a href="drinks.html" class="drinks">Nước</a>
                 <a href="combo.html" class="combo">Combo</a>
-                <a href="cake-theme.html" class="cake-theme">Bánh kem chủ đề</a>
-                <a href="european-cake.html" class="european-cake">Bánh Âu</a>
+                <a href="cake-theme.html" class="cake-theme">Bánh kem chủ đề - phụ kiện</a>
+                <a href="european-cake.html" class="european-cake">Bánh Ăn Vặt- Bánh Âu- Bánh Healthy</a>
                 <a href="salted-egg.html" class="salted-egg">Bông lan trứng muối</a>
-                <a href="snack-cake.html" class="snack-cake">Bánh ăn vặt</a>
                 <a href="about.html">Giới thiệu</a>
                 <a href="contact.html">Liên hệ</a>
             </div>
@@ -383,11 +381,11 @@
             const comboLink = document.querySelector('.combo');
             const cakeAccessoriesLink = document.querySelector('.cake-accessories');
             const cakeThemeLink = document.querySelector('.cake-theme');
-            const europeanCakeLink = document.querySelector('.european-cake');
+            const europeanCakeLink = document.querySelector('.european-cake'); // Đổi tên hiển thị thành Bánh Ăn Vặt- Bánh Âu- Bánh Healthy
             const saltedEggLink = document.querySelector('.salted-egg');
-            const snackCakeLink = document.querySelector('.snack-cake');
+            // Đã xóa biến snackCakeLink vì không còn mục Bánh ăn vặt
             const cakeFruitLink = document.querySelector('.cake-fruit');
-            const flowerLink = document.querySelector('.flower');
+            const flowerLink = document.querySelector('.flower'); // Đổi tên hiển thị thành Hoa kèm bánh và nước
 
             dropdownToggle.addEventListener('click', function(e) {
                 // Chỉ cho phép xổ dropdown khi màn hình nhỏ hơn hoặc bằng 768px
