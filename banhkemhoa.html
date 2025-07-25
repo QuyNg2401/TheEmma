@@ -17,25 +17,31 @@
             position: relative;
             display: inline-block;
         }
+        
         .dropdown-toggle {
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 5px;
         }
+        
         .dropdown-toggle .arrow {
             margin-left: auto;
             transition: transform 0.3s ease;
             display: none;
         }
+        
         .dropdown-toggle.active .arrow {
             transform: rotate(180deg);
         }
+        
+        /* Hiển thị mũi tên chỉ trên mobile */
         @media (max-width: 768px) {
             .dropdown-toggle .arrow {
                 display: block;
             }
         }
+        
         .dropdown-menu {
             display: none;
             position: absolute;
@@ -50,6 +56,7 @@
             margin: 0;
             list-style: none;
         }
+        
         .dropdown-menu a {
             color: #333;
             padding: 12px 16px;
@@ -59,21 +66,28 @@
             margin: 0;
             padding-left: 16px;
         }
+        
         .dropdown-menu a:hover {
             background-color: #000;
             color: var(--primary-color);
         }
+        
         .dropdown:hover .dropdown-menu {
             display: block;
         }
+        
         .dropdown-toggle.active {
             color: var(--primary-color);
         }
+        
+        /* Ẩn dropdown hover trên màn hình nhỏ */
         @media (max-width: 768px) {
             .dropdown:hover .dropdown-menu {
                 display: none;
             }
         }
+        
+        /* Animation cho danh mục con */
         .nav-links .bread,
         .nav-links .drinks,
         .nav-links .combo,
@@ -86,6 +100,8 @@
             opacity: 0;
             transform: translateY(-10px);
         }
+        
+        /* Chỉ hiển thị khi có class show */
         .nav-links .bread.show,
         .nav-links .drinks.show,
         .nav-links .combo.show,
@@ -98,6 +114,8 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+        /* Ẩn danh mục con trên desktop, chỉ hiển thị trên mobile */
         .nav-links .bread,
         .nav-links .drinks,
         .nav-links .combo,
@@ -110,6 +128,8 @@
             opacity: 0;
             transform: translateY(-10px);
         }
+        
+        /* Chỉ hiển thị khi có class show */
         .nav-links .bread.show,
         .nav-links .drinks.show,
         .nav-links .combo.show,
@@ -122,6 +142,8 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+        /* Luôn ẩn trên desktop, kể cả khi có class show */
         @media (min-width: 769px) {
             .nav-links .bread,
             .nav-links .drinks,
@@ -134,14 +156,17 @@
                 display: none !important;
             }
         }
+        
         @media (max-width: 768px) {
             .nav-links {
                 padding: 20px;
             }
+            
             .nav-links a {
                 padding: 12px 0;
                 margin: 4px 0;
             }
+            
             .nav-links .bread,
             .nav-links .drinks,
             .nav-links .combo,
@@ -179,12 +204,67 @@
             margin: 0;
             padding-left: 28px !important;
         }
-        .dropdown-menu a.active,
-        .dropdown-menu a:hover {
+        /* Thêm CSS cho dropdown-menu-sub */
+        .dropdown-sub { position: relative; }
+        .dropdown-menu-sub {
+          display: none;
+          position: absolute;
+          left: 100%;
+          top: 0;
+          min-width: 220px;
+          background: #000;
+          border-radius: 16px !important;
+          border: 2px solid #E5BC6F;
+          box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+          z-index: 10002;
+          overflow: hidden;
+        }
+        .dropdown-sub:hover .dropdown-menu-sub,
+        .dropdown-sub:focus-within .dropdown-menu-sub {
+          display: block;
+        }
+        .dropdown-menu-sub .dropdown-item {
+          color: #E5BC6F !important;
+          background: #000;
+          padding-left: 32px !important;
+        }
+        .dropdown-menu-sub .dropdown-item:hover {
+          background: #222;
+          color: #fff !important;
+        }
+        .dropdown-menu-sub .dropdown-item.active {
             background-color: #000;
             color: var(--primary-color) !important;
         }
+        @media (max-width: 768px) {
+          .dropdown-menu-sub {
+            position: fixed !important;
+            left: 0 !important;
+            right: 0 !important;
+            top: 120px !important;
+            width: 100vw !important;
+            max-height: 50vh !important;
+            overflow-y: auto !important;
+            background: #000 !important;
+            border-radius: 0 0 16px 16px !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+            border: none !important;
+            z-index: 10003 !important;
+            padding: 0 !important;
+          }
+          .dropdown-menu-sub .dropdown-item {
+            color: #E5BC6F !important;
+            padding-left: 28px !important;
+            font-size: 1.1em;
+          }
+          .dropdown-menu-sub .dropdown-item:hover {
+            background: #000 !important;
+            color: var(--primary-color) !important;
+            }
+        }
     </style>
+</head>
+<body>
     <nav class="nav-container">
         <div class="nav-content">
             <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer;">
@@ -198,21 +278,24 @@
                         <a href="bread.html" class="dropdown-item">Bánh mì</a>
                         <a href="drinks.html" class="dropdown-item">Nước</a>
                         <a href="combo.html" class="dropdown-item">Combo</a>
-                        <a href="cake-theme.html" class="dropdown-item">Bánh kem chủ đề</a>
+                        <a href="cup.html" class="dropdown-item">Bánh cupcake</a>
+                        <div class="dropdown-sub">
+                            <a href="#" class="dropdown-item dropdown-parent">Bánh kem</a>
+                            <div class="dropdown-menu-sub">
+                                <a href="banhfontdant.html" class="dropdown-item">Bánh kem Fontdant nghệ thuật</a>
+                                <a href="banhkemchobegai.html" class="dropdown-item">Bánh kem cho bé gái</a>
+                                <a href="banhkemhoa.html" class="dropdown-item active">Bánh kem hoa</a>
+                                <a href="banhkemkhaitruong.html" class="dropdown-item">Bánh kem khai trương</a>
+                                <a href="banhkemthuhanquoc.html" class="dropdown-item">Bánh kem thú Hàn Quốc - Bento</a>
+                                <a href="cake-theme.html" class="dropdown-item">Bánh kem chủ đề - phụ kiện</a>
+                                <a href="cake-fruit.html" class="dropdown-item">Bánh kem trái cây</a>
+                            </div>
+                        </div>
                         <a href="european-cake.html" class="dropdown-item">Bánh Ăn Vặt- Bánh Âu- Bánh Healthy</a>
                         <a href="salted-egg.html" class="dropdown-item">Bông lan trứng muối</a>
-                        <a href="snack-cake.html" class="dropdown-item">Bánh ăn vặt</a>
-                        <a href="cake-fruit.html" class="dropdown-item">Bánh kem trái cây</a>
-                        <a href="flower.html" class="dropdown-item active">Hoa kèm bánh và nước</a>
+                        <a href="flower.html" class="dropdown-item">Hoa kèm bánh và nước</a>
                     </div>
                 </div>
-                <a href="bread.html" class="bread">Bánh mì</a>
-                <a href="drinks.html" class="drinks">Nước</a>
-                <a href="combo.html" class="combo">Combo</a>
-                <a href="cake-theme.html" class="cake-theme">Bánh kem chủ đề</a>
-                <a href="european-cake.html" class="european-cake">Bánh Ăn Vặt- Bánh Âu- Bánh Healthy</a>
-                <a href="salted-egg.html" class="salted-egg">Bông lan trứng muối</a>
-                <a href="snack-cake.html" class="snack-cake">Bánh ăn vặt</a>
                 <a href="about.html">Giới thiệu</a>
                 <a href="contact.html">Liên hệ</a>
             </div>
@@ -227,8 +310,8 @@
                     <img src="Assets/images/banhkemhoa/z6835854184674_42a378e2a5c7a6e039a147a70dea4d4e.jpg" alt="z6835854184674_42a378e2a5c7a6e039a147a70dea4d4e">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835854184674_42a378e2a5c7a6e039a147a70dea4d4e</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 1</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -236,8 +319,8 @@
                     <img src="Assets/images/banhkemhoa/z6835854189362_7fe663bff57e824bbbbb01b0be852c32.jpg" alt="z6835854189362_7fe663bff57e824bbbbb01b0be852c32">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835854189362_7fe663bff57e824bbbbb01b0be852c32</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 2</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -245,8 +328,8 @@
                     <img src="Assets/images/banhkemhoa/z6835854203508_148afbccc6a53ef2520a1031a2f562c8.jpg" alt="z6835854203508_148afbccc6a53ef2520a1031a2f562c8">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835854203508_148afbccc6a53ef2520a1031a2f562c8</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 3</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -254,8 +337,8 @@
                     <img src="Assets/images/banhkemhoa/z6835854203688_a99e1121b36493c0d40e12fd2c1e4a4d.jpg" alt="z6835854203688_a99e1121b36493c0d40e12fd2c1e4a4d">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835854203688_a99e1121b36493c0d40e12fd2c1e4a4d</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 4</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -263,8 +346,8 @@
                     <img src="Assets/images/banhkemhoa/z6835854213370_038b80bed4e0ec9d4e913ad1e50855fe.jpg" alt="z6835854213370_038b80bed4e0ec9d4e913ad1e50855fe">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835854213370_038b80bed4e0ec9d4e913ad1e50855fe</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 5</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -272,8 +355,8 @@
                     <img src="Assets/images/banhkemhoa/z6835658357410_741676a176bf2efa556618c1107439a1.jpg" alt="z6835658357410_741676a176bf2efa556618c1107439a1">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835658357410_741676a176bf2efa556618c1107439a1</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 6</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -281,8 +364,8 @@
                     <img src="Assets/images/banhkemhoa/z6835658357701_d8ade2acc54cf5d713a7a1e495b56ecd.jpg" alt="z6835658357701_d8ade2acc54cf5d713a7a1e495b56ecd">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835658357701_d8ade2acc54cf5d713a7a1e495b56ecd</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 7</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -290,8 +373,8 @@
                     <img src="Assets/images/banhkemhoa/z6835658370917_35b1c31c193178ca12a2426d83f22778.jpg" alt="z6835658370917_35b1c31c193178ca12a2426d83f22778">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835658370917_35b1c31c193178ca12a2426d83f22778</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 8</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -299,8 +382,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616311891_fa2b291a66007e01ecb69be653c793a3.jpg" alt="z6835616311891_fa2b291a66007e01ecb69be653c793a3">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616311891_fa2b291a66007e01ecb69be653c793a3</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 9</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -308,8 +391,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616313585_580118c829339473251b5ab647cea26d.jpg" alt="z6835616313585_580118c829339473251b5ab647cea26d">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616313585_580118c829339473251b5ab647cea26d</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 10</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -317,8 +400,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616318153_55de20e31d4126ee3edc5f44ff84fe4c.jpg" alt="z6835616318153_55de20e31d4126ee3edc5f44ff84fe4c">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616318153_55de20e31d4126ee3edc5f44ff84fe4c</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 11</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -326,8 +409,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616337963_733e65f00a0f4efca2583c71da35e46f.jpg" alt="z6835616337963_733e65f00a0f4efca2583c71da35e46f">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616337963_733e65f00a0f4efca2583c71da35e46f</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 12</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -335,8 +418,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616343981_ef1454369047dce1ca0b2abe5c0b95ed.jpg" alt="z6835616343981_ef1454369047dce1ca0b2abe5c0b95ed">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616343981_ef1454369047dce1ca0b2abe5c0b95ed</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 13</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -344,8 +427,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616345473_7cfb013ff9451b7a25f4ab4d010e8d4f.jpg" alt="z6835616345473_7cfb013ff9451b7a25f4ab4d010e8d4f">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616345473_7cfb013ff9451b7a25f4ab4d010e8d4f</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 14</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -353,8 +436,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616359970_fdbfa9b63a6340e4bbc4f3ef34949723.jpg" alt="z6835616359970_fdbfa9b63a6340e4bbc4f3ef34949723">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616359970_fdbfa9b63a6340e4bbc4f3ef34949723</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 15</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -362,8 +445,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616366783_75561e0032f35550a4fa757ee5bee8b4.jpg" alt="z6835616366783_75561e0032f35550a4fa757ee5bee8b4">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616366783_75561e0032f35550a4fa757ee5bee8b4</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 16</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -371,8 +454,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616370066_6b9104595a266d551a530c9f64f24680.jpg" alt="z6835616370066_6b9104595a266d551a530c9f64f24680">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616370066_6b9104595a266d551a530c9f64f24680</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 17</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -380,8 +463,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616373137_e6564ea0ee482ca142b91aaad97b541d.jpg" alt="z6835616373137_e6564ea0ee482ca142b91aaad97b541d">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616373137_e6564ea0ee482ca142b91aaad97b541d</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 18</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -389,8 +472,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616383814_65b5d1e1b7259d135140e50f929f5b86.jpg" alt="z6835616383814_65b5d1e1b7259d135140e50f929f5b86">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616383814_65b5d1e1b7259d135140e50f929f5b86</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 19</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -398,8 +481,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616388144_927bb5464f0c59d96b82ca4d92abc936.jpg" alt="z6835616388144_927bb5464f0c59d96b82ca4d92abc936">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616388144_927bb5464f0c59d96b82ca4d92abc936</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 20</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -407,8 +490,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616400773_6e0fd5e24b63027b2b505bb7a6583a5c.jpg" alt="z6835616400773_6e0fd5e24b63027b2b505bb7a6583a5c">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616400773_6e0fd5e24b63027b2b505bb7a6583a5c</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 21</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -416,8 +499,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616406819_97e709d62cb15c9ffbafc74ab566fd54.jpg" alt="z6835616406819_97e709d62cb15c9ffbafc74ab566fd54">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616406819_97e709d62cb15c9ffbafc74ab566fd54</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 22</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -425,8 +508,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616413502_7c6f6092385a52f3f910d1e33ea7e0c8.jpg" alt="z6835616413502_7c6f6092385a52f3f910d1e33ea7e0c8">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616413502_7c6f6092385a52f3f910d1e33ea7e0c8</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 23</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -434,8 +517,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616419159_1042bc7e9e5e5a14a080d55879931731.jpg" alt="z6835616419159_1042bc7e9e5e5a14a080d55879931731">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616419159_1042bc7e9e5e5a14a080d55879931731</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 24</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -443,8 +526,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616427159_c455398807a0bb13c210174eec3e93dd.jpg" alt="z6835616427159_c455398807a0bb13c210174eec3e93dd">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616427159_c455398807a0bb13c210174eec3e93dd</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 25</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -452,8 +535,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616433881_e775573ac30a66dd5b09f4af29a47b21.jpg" alt="z6835616433881_e775573ac30a66dd5b09f4af29a47b21">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616433881_e775573ac30a66dd5b09f4af29a47b21</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 26</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -461,8 +544,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616441443_6af736b014904d674a2e95c3604e1b49.jpg" alt="z6835616441443_6af736b014904d674a2e95c3604e1b49">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616441443_6af736b014904d674a2e95c3604e1b49</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 27</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -470,8 +553,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616450141_56c18d4cbd3b4c6309a515526cbbfe2f.jpg" alt="z6835616450141_56c18d4cbd3b4c6309a515526cbbfe2f">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616450141_56c18d4cbd3b4c6309a515526cbbfe2f</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 28</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -479,8 +562,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616455107_819d83f68be873643b648f2e0b1d1680.jpg" alt="z6835616455107_819d83f68be873643b648f2e0b1d1680">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616455107_819d83f68be873643b648f2e0b1d1680</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 29</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -488,8 +571,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616464757_ba1025ddb1f9793fc032449c393341e1.jpg" alt="z6835616464757_ba1025ddb1f9793fc032449c393341e1">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616464757_ba1025ddb1f9793fc032449c393341e1</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 30</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -497,8 +580,8 @@
                     <img src="Assets/images/banhkemhoa/z6835616474138_c6fda1065597e7dee730a8c50bd1ea9e.jpg" alt="z6835616474138_c6fda1065597e7dee730a8c50bd1ea9e">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835616474138_c6fda1065597e7dee730a8c50bd1ea9e</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 31</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -506,8 +589,8 @@
                     <img src="Assets/images/banhkemhoa/z6835575690453_c46d304e1432d4380538161668f740f9.jpg" alt="z6835575690453_c46d304e1432d4380538161668f740f9">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835575690453_c46d304e1432d4380538161668f740f9</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 32</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -515,8 +598,8 @@
                     <img src="Assets/images/banhkemhoa/z6835575695587_034a09f53bb2d5ce7dc3c1d01826e951.jpg" alt="z6835575695587_034a09f53bb2d5ce7dc3c1d01826e951">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835575695587_034a09f53bb2d5ce7dc3c1d01826e951</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 33</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -524,7 +607,8 @@
                     <img src="Assets/images/banhkemhoa/z6835575690126_106bff8a513b5c57f27ceff2848cd95f.jpg" alt="z6835575690126_106bff8a513b5c57f27ceff2848cd95f">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835575690126_106bff8a513b5c57f27ceff2848cd95f">
+                    <h3 class="cake-name">Mẫu 34</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -532,8 +616,8 @@
                     <img src="Assets/images/banhkemhoa/z6835575710580_2152fe3ba470cd640bf676e65f85ddeb.jpg" alt="z6835575710580_2152fe3ba470cd640bf676e65f85ddeb">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835575710580_2152fe3ba470cd640bf676e65f85ddeb</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 35</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -541,8 +625,8 @@
                     <img src="Assets/images/banhkemhoa/z6835575721991_5b6314754f4b89335b15bae652d2adea.jpg" alt="z6835575721991_5b6314754f4b89335b15bae652d2adea">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835575721991_5b6314754f4b89335b15bae652d2adea</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 36</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -550,8 +634,8 @@
                     <img src="Assets/images/banhkemhoa/z6835575725623_c326a74bd6c06bf00c56fe18bb7171c9.jpg" alt="z6835575725623_c326a74bd6c06bf00c56fe18bb7171c9">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835575725623_c326a74bd6c06bf00c56fe18bb7171c9</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 37</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -559,8 +643,8 @@
                     <img src="Assets/images/banhkemhoa/z6835575738155_9d3d153f9611a3eebb58233adc505662.jpg" alt="z6835575738155_9d3d153f9611a3eebb58233adc505662">
                 </div>
                 <div class="cake-info">
-                    <h3 class="cake-name">z6835575738155_9d3d153f9611a3eebb58233adc505662</h3>
-                    <p class="cake-description"></p>
+                    <h3 class="cake-name">Mẫu 38</h3>
+                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
         </div>
@@ -599,15 +683,10 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const dropdownToggle = document.querySelector('.dropdown-toggle');
-            const breadLink = document.querySelector('.bread');
-            const drinksLink = document.querySelector('.drinks');
-            const comboLink = document.querySelector('.combo');
-            const cakeAccessoriesLink = document.querySelector('.cake-accessories');
-            const cakeThemeLink = document.querySelector('.cake-theme');
-            const europeanCakeLink = document.querySelector('.european-cake'); // Đổi tên hiển thị thành Bánh Ăn Vặt- Bánh Âu- Bánh Healthy
-            const saltedEggLink = document.querySelector('.salted-egg');
-            // Đã xóa biến snackCakeLink vì không còn mục Bánh ăn vặt
             const dropdownMenu = document.querySelector('.dropdown-menu');
+            const dropdownParent = document.querySelector('.dropdown-parent');
+            const dropdownMenuSub = document.querySelector('.dropdown-menu-sub');
+
             dropdownToggle.addEventListener('click', function(e) {
                 if (window.innerWidth > 768) {
                     return;
@@ -626,31 +705,60 @@
                 if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
                     dropdownMenu.style.display = 'none';
                     dropdownToggle.classList.remove('active');
+                    if(dropdownMenuSub) dropdownMenuSub.style.display = 'none';
+                    if(dropdownParent) dropdownParent.classList.remove('active');
                 }
             });
             // Đảm bảo menu con ẩn mặc định trên mobile
             if (window.innerWidth <= 768) {
                 dropdownMenu.style.display = 'none';
+                if(dropdownMenuSub) dropdownMenuSub.style.display = 'none';
             }
-            const dropdownItems = document.querySelectorAll('.dropdown-item');
-            dropdownItems.forEach(item => {
-                item.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    if (href && !href.startsWith('#')) {
-                        return;
-                    }
+
+            // Xử lý click vào Bánh kem trên mobile
+            if(dropdownParent && dropdownMenuSub && dropdownMenu) {
+                dropdownParent.addEventListener('click', function(e) {
+                    if(window.innerWidth > 768) return;
                     e.preventDefault();
-                    const targetId = href.substring(1);
-                    const targetSection = document.getElementById(targetId);
-                    if (targetSection) {
-                        targetSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
+                    this.classList.toggle('active');
+                    const navLinks = document.querySelector('.nav-links');
+                    if(this.classList.contains('active')) {
+                        // Ẩn toàn bộ menu, chỉ hiện menu con
+                        if(navLinks) {
+                            Array.from(navLinks.children).forEach(function(child) {
+                                // Ẩn tất cả, trừ dropdown chứa Bánh kem
+                                if(!child.classList.contains('dropdown')) {
+                                    child.style.display = 'none';
+                                } else {
+                                    // Ẩn tất cả trong dropdown-menu trừ .dropdown-sub
+                                    Array.from(dropdownMenu.children).forEach(function(item) {
+                                        if(!item.classList.contains('dropdown-sub')) {
+                                            item.style.display = 'none';
+                                        } else {
+                                            item.style.display = 'block';
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                        dropdownMenuSub.style.display = 'block';
+                    } else {
+                        // Hiện lại toàn bộ menu
+                        if(navLinks) {
+                            Array.from(navLinks.children).forEach(function(child) {
+                                child.style.display = '';
+                            });
+                        }
+                        Array.from(dropdownMenu.children).forEach(function(item) {
+                            item.style.display = '';
                         });
+                        dropdownMenuSub.style.display = 'none';
                     }
                 });
-            });
+            }
         });
+        
+        // Xử lý nút Back to Top mới
         const backToTopButton = document.getElementById('backToTopButton');
         if (backToTopButton) {
             window.addEventListener('scroll', () => {
@@ -668,8 +776,45 @@
                     behavior: 'smooth'
                 });
             });
+            // Ẩn mặc định
             backToTopButton.style.display = 'none';
         }
+
+        // Reset menu về trạng thái mặc định (hiện hết các mục cha)
+        function resetMenuDisplay() {
+            const navLinks = document.querySelector('.nav-links');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            const dropdownMenuSub = document.querySelector('.dropdown-menu-sub');
+            if(navLinks) {
+                Array.from(navLinks.children).forEach(function(child) {
+                    child.style.display = '';
+                });
+            }
+            if(dropdownMenu) {
+                Array.from(dropdownMenu.children).forEach(function(item) {
+                    item.style.display = '';
+                });
+            }
+            if(dropdownMenuSub) dropdownMenuSub.style.display = 'none';
+        }
+
+        // Gắn reset khi click nút ☰
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        if(mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', function() {
+                resetMenuDisplay();
+            });
+        }
+        // Gắn reset khi click ra ngoài menu
+        // (đã có sự kiện click ra ngoài ở trên, chỉ cần thêm resetMenuDisplay)
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth > 768) return;
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
+                resetMenuDisplay();
+            }
+        });
     </script>
 </body>
 </html> 
