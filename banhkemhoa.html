@@ -262,6 +262,57 @@
             color: var(--primary-color) !important;
             }
         }
+        /* --- CSS bảng giá bánh --- */
+        @media (max-width: 600px) {
+          .cake-size-table {
+            font-size: 0.95em;
+          }
+          .cake-size-table th, .cake-size-table td {
+            padding: 7px 6px;
+            font-size: 1em;
+          }
+          .cake-size-table {
+            min-width: 0;
+            width: 100%;
+          }
+        }
+        .cake-size-table {
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          border-collapse: separate;
+          border-spacing: 0;
+          font-size: 1.1em;
+          background: #fff;
+          box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+          border-radius: 14px;
+          overflow: hidden;
+        }
+        .cake-size-table th, .cake-size-table td {
+          border: 1px solid #ddd;
+          padding: 10px 20px;
+          text-align: center;
+        }
+        .cake-size-table th {
+          background: #EDD29F;
+          color: #000;
+        }
+        .cake-size-table th:first-child {
+          border-top-left-radius: 14px;
+        }
+        .cake-size-table th:last-child {
+          border-top-right-radius: 14px;
+        }
+        .cake-size-table tr:last-child td:first-child {
+          border-bottom-left-radius: 14px;
+        }
+        .cake-size-table tr:last-child td:last-child {
+          border-bottom-right-radius: 14px;
+        }
+        .table-responsive {
+          width: 100%;
+          overflow-x: auto;
+        }
     </style>
 </head>
 <body>
@@ -304,6 +355,24 @@
     </nav>
     <div class="container">
         <h2 class="section-title" style="color:var(--primary-color);">Bánh kem hoa</h2>
+        <div class="table-responsive">
+<table class="cake-size-table">
+  <thead>
+    <tr>
+      <th>Size</th>
+      <th>Giá</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Size 12cm:</td><td>300.000 VNĐ</td></tr>
+    <tr><td>Size 14cm:</td><td>360.000 VNĐ</td></tr>
+    <tr><td>Size 16cm:</td><td>430.000 VNĐ</td></tr>
+    <tr><td>Size 20cm:</td><td>600.000 VNĐ</td></tr>
+    <tr><td>Size 22cm:</td><td>680.000 VNĐ</td></tr>
+    <tr><td>Size 25cm:</td><td>780.000 VNĐ</td></tr>
+  </tbody>
+</table>
+</div>
         <div class="menu-grid">
             <div class="cake-item">
                 <div class="cake-image">
@@ -311,7 +380,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 1</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -320,7 +388,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 2</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -329,7 +396,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 3</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -338,7 +404,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 4</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -347,7 +412,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 5</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -356,7 +420,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 6</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -365,7 +428,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 7</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -374,7 +436,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 8</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -383,7 +444,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 9</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -392,7 +452,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 10</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -419,7 +478,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 13</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -428,7 +486,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 14</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -437,7 +494,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 15</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -446,7 +502,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 16</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -455,7 +510,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 17</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -464,7 +518,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 18</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -473,7 +526,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 19</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -482,7 +534,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 20</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -491,7 +542,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 21</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -500,7 +550,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 22</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -509,7 +558,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 23</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -518,7 +566,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 24</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -527,7 +574,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 25</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -572,7 +618,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 30</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -581,7 +626,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 31</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -590,7 +634,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 32</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -599,7 +642,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 33</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -608,7 +650,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 34</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -617,7 +658,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 35</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -626,7 +666,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 36</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -635,7 +674,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 37</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
             <div class="cake-item">
@@ -644,7 +682,6 @@
                 </div>
                 <div class="cake-info">
                     <h3 class="cake-name">Mẫu 38</h3>
-                    <strong class="cake-size-price">Giá liên hệ</strong>
                 </div>
             </div>
         </div>
